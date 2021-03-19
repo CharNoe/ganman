@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include <QFileSystemModel>
+#include <QAbstractItemModel>
 #include <QSettings>
 #include <QMainWindow>
 #include <QGraphicsScene>
@@ -12,7 +12,6 @@
 namespace gm {
 
 class CaptureManager;
-class ScreenCapture;
 class CameraListModel;
 class DisplayListModel;
 class ImageListModel;

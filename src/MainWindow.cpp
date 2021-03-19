@@ -6,12 +6,11 @@
 #include <QFileDialog>
 #include <QDesktopServices>
 #include <QDateTime>
-#include <QScrollEvent>
+#include <QWheelEvent>
 #include <QScrollBar>
 #include <QUrl>
 #include <QMessageBox>
 #include "CaptureManager.h"
-#include "ScreenCapture.h"
 #include "CameraListModel.h"
 #include "DisplayListModel.h"
 #include "ImageListModel.h"
@@ -24,6 +23,7 @@ namespace {
 constexpr auto keyDefaultTargetType = "target_type";
 constexpr auto keyDefaultTarget     = "target";
 constexpr auto keyImageListMax      = "image_max";
+constexpr auto keyImageExtension    = "image_extension";
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -278,7 +278,8 @@ QString MainWindow::makeFilePath() const
     return ui->pathEdit->text()
             + QDir::separator()
             + ui->nameEdit->text()
-            + datetimeStr + ".jpg";
+            + datetimeStr
+            + ui->extensionComboBox->currentText();
 }
 
 void MainWindow::openPath(const QString &path)
@@ -309,6 +310,7 @@ void MainWindow::saveSettings()
     _settings.setValue(keyDefaultTargetType, ui->typeComboBox->currentIndex());
     _settings.setValue(keyDefaultTarget, ui->targetComboBox->currentIndex());
     _settings.setValue(keyImageListMax, ui->maxSpinBox->value());
+    _settings.setValue(keyImageExtension, ui->extensionComboBox->currentIndex());
 }
 
 void MainWindow::loadSettings()
@@ -316,6 +318,7 @@ void MainWindow::loadSettings()
     ui->pathEdit->setText(_settings.value("path").toString());
     ui->nameEdit->setText(_settings.value("name").toString());
     ui->maxSpinBox->setValue(_settings.value(keyImageListMax, 10).toInt());
+    ui->extensionComboBox->setCurrentIndex(_settings.value(keyImageExtension, 0).toInt());
     restoreGeometry(_settings.value("geometry").toByteArray());
     ui->splitter->restoreState(_settings.value("splitter").toByteArray());
 }

@@ -2,7 +2,6 @@
 
 #include "CaptureDisplay.h"
 #include "CaptureCamera.h"
-#include "ScreenCapture.h"
 #include "CameraListModel.h"
 #include "DisplayListModel.h"
 

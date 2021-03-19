@@ -49,7 +49,7 @@
       <item>
        <widget class="QComboBox" name="targetComboBox">
         <property name="toolTip">
-         <string>Capture target</string>
+         <string/>
         </property>
         <property name="statusTip">
          <string>Select target</string>
@@ -62,7 +62,7 @@
          <string>Reload target list</string>
         </property>
         <property name="text">
-         <string>Reload</string>
+         <string>&amp;Reload</string>
         </property>
        </widget>
       </item>
@@ -95,7 +95,7 @@
         <enum>QTabWidget::West</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="captureTab">
         <attribute name="title">
@@ -185,7 +185,7 @@
               </size>
              </property>
              <property name="text">
-              <string>Shot</string>
+              <string>&amp;Shot</string>
              </property>
              <property name="iconSize">
               <size>
@@ -216,7 +216,7 @@
              <item>
               <widget class="QCheckBox" name="withSaveCheckBox">
                <property name="text">
-                <string>with Save</string>
+                <string>&amp;with Save</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -229,7 +229,7 @@
                 <bool>false</bool>
                </property>
                <property name="text">
-                <string>Save as...</string>
+                <string>Save &amp;as...</string>
                </property>
               </widget>
              </item>
@@ -259,7 +259,10 @@
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>Max:</string>
+                <string>&amp;Max:</string>
+               </property>
+               <property name="buddy">
+                <cstring>maxSpinBox</cstring>
                </property>
               </widget>
              </item>
@@ -300,7 +303,7 @@
          <item row="1" column="4">
           <widget class="QToolButton" name="openFolderButton">
            <property name="text">
-            <string>Open Folder</string>
+            <string>&amp;Open Folder</string>
            </property>
           </widget>
          </item>
@@ -356,6 +359,9 @@
          </item>
          <item row="1" column="3">
           <widget class="QToolButton" name="referenceButton">
+           <property name="statusTip">
+            <string>Open file dialog</string>
+           </property>
            <property name="text">
             <string>...</string>
            </property>
