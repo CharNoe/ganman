@@ -1,8 +1,7 @@
 # Ganman
 Simple and multi-platform screen/camera capture
-
 <div align="center">
-![screenshot](img/screenshot.png)
+<img src="img/screenshot.png" alt="screenshot" />
 </div>
 
 ## Build required
