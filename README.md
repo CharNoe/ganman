@@ -1,11 +1,14 @@
-# Ganan
+# Ganman
 Simple and multi-platform screen/camera capture
-![screenshot](img/screenshot.png)
 
-# Build required
+<div align="center">
+![screenshot](img/screenshot.png)
+</div>
+
+## Build required
 * [Qt5](https://www.qt.io/)
 
-# Features
+## Features
 * Capture following devices
     * Display
     * Web camera
