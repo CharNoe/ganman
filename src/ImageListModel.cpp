@@ -1,5 +1,6 @@
 #include "ImageListModel.h"
 
+#include <mutex>
 #include <QThread>
 #include <QDir>
 #include <QPixmap>
