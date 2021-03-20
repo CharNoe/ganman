@@ -14,6 +14,7 @@ CaptureManager::CaptureManager()
     , _capture(new CaptureBase)
 {
 }
+CaptureManager::~CaptureManager() = default;
 
 
 void CaptureManager::reload()

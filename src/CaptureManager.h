@@ -29,6 +29,7 @@ public: // class
 
 public:
     CaptureManager();
+    ~CaptureManager();
 
 
     void reload         ();
