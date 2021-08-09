@@ -233,6 +233,13 @@ void MainWindow::onCustomContextMenuRequested(const QPoint &pos)
     }
 }
 
+void MainWindow::onDoubleClicked(const QModelIndex &index)
+{
+    auto path = index.data(ImageListModel::UserRole_Path).toString();
+    if (!path.isEmpty())
+        openPath(path);
+}
+
 void MainWindow::onMaxCountChanged(const int value)
 {
     _imageListModel->setMaxCount(value);
@@ -262,6 +269,8 @@ void MainWindow::setupSignals()
             this,                   &MainWindow::onCaptureTargetChanged );
     connect(ui->imageListView,      &QTableView::customContextMenuRequested,
             this,                   &MainWindow::onCustomContextMenuRequested );
+    connect(ui->imageListView,      &QTableView::doubleClicked,
+            this,                   &MainWindow::onDoubleClicked );
     connect(ui->maxSpinBox,         qOverload<int>(&QSpinBox::valueChanged),
             this,                   &MainWindow::onMaxCountChanged );
     connect(ui->imageListView->horizontalScrollBar(), &QScrollBar::rangeChanged,

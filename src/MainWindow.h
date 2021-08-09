@@ -48,6 +48,7 @@ private: // slots
     void onCaptureTargetChanged(int loc);
     void onSaveDirectoryChanged();
     void onCustomContextMenuRequested(const QPoint& pos);
+    void onDoubleClicked(const QModelIndex &index);
     void onMaxCountChanged(const int value);
 
 
