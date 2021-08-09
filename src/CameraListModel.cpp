@@ -34,6 +34,9 @@ QCameraInfo CameraListModel::cameraInfo(const QModelIndex &index) const
 
 QCameraInfo CameraListModel::cameraInfo(const int row) const
 {
+    if (row < 0 || row > _cameras.size())
+        return QCameraInfo{};
+
     return _cameras.at(row);
 }
 

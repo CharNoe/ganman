@@ -51,7 +51,8 @@ QAbstractItemModel *CaptureCamera::model()
 
 void CaptureCamera::onImageCaptured(int , const QImage &frame)
 {
-    emit imageCaptured(frame);
+    QImage img = frame.copy();
+    emit imageCaptured(img);
 }
 
 } // namespace gm
